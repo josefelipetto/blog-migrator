@@ -11,7 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * Class Posts
  * @package App\Services
  */
-class Posts
+class PostsParser
 {
     /**
      * @var array

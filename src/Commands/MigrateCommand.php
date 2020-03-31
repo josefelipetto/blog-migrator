@@ -4,7 +4,7 @@
 namespace App\Commands;
 
 
-use App\Services\Posts;
+use App\Services\PostsParser;
 use App\Services\WordpressAPI;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -23,7 +23,7 @@ class MigrateCommand extends Command
 
             $posts = json_decode($response->getBody()->getContents(), true, 512, JSON_THROW_ON_ERROR);
 
-            (new Posts($posts, $output))->parse();
+            (new PostsParser($posts, $output))->parse();
 
         }
 
